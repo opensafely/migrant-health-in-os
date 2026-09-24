@@ -1,8 +1,9 @@
 version: '5.0'
 
 actions:
-  generate_dataset:
-    run: ehrql:v1 generate-dataset analysis/dataset_definition.py --output output/dataset.csv.gz
+
+  diabetes_prev:
+    run: ehrql:v1 generate-measures analysis/diabetes_measures.py --output output/tables/annual_counts/diabetes/:csv
     outputs:
-      highly_sensitive:
-        dataset: output/dataset.csv.gz
+      moderately_sensitive:
+        csv: output/tables/annual_counts/diabetes/*.csv 

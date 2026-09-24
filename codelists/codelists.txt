@@ -1,0 +1,12 @@
+nhsd-primary-care-domain-refsets/dmres_cod/20260630/
+nhsd-primary-care-domain-refsets/dm_cod/20260630/
+opensafely/migration-status/459d112c/
+opensafely/born-in-the-uk/6225f7e6/
+opensafely/born-outside-the-uk/51089538/
+opensafely/immigration-status-excl-refugee-asylum/6a18086d/
+opensafely/asylum-or-refugee-status/209cb9e0/
+opensafely/english-not-main-language/2db2f6cf/
+opensafely/interpreter-required/46c26a04/
+opensafely/british-ethnicities/6a897fb0/
+opensafely/trafficking-and-modern-slavery/0074bbad/
+opensafely/date-of-uk-entry/64964d8a/
