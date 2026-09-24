@@ -1,3 +1,76 @@
 {
-  "files": {}
+  "files": {
+    "opensafely-date-of-uk-entry.csv": {
+      "id": "opensafely/date-of-uk-entry/64964d8a",
+      "url": "https://www.opencodelists.org/codelist/opensafely/date-of-uk-entry/64964d8a/",
+      "downloaded_at": "2026-09-24 11:54:42.986243+00:00Z",
+      "sha": "b0ff7e0849145ea32f7bf6233dd8eb04e0958cf3"
+    },
+    "opensafely-trafficking-and-modern-slavery.csv": {
+      "id": "opensafely/trafficking-and-modern-slavery/0074bbad",
+      "url": "https://www.opencodelists.org/codelist/opensafely/trafficking-and-modern-slavery/0074bbad/",
+      "downloaded_at": "2026-09-24 11:54:18.368803+00:00Z",
+      "sha": "c315d06d1b78dd3b77630e6b38a700338b763b45"
+    },
+    "opensafely-british-ethnicities.csv": {
+      "id": "opensafely/british-ethnicities/6a897fb0",
+      "url": "https://www.opencodelists.org/codelist/opensafely/british-ethnicities/6a897fb0/",
+      "downloaded_at": "2026-09-24 11:53:46.302239+00:00Z",
+      "sha": "b29fb0154f75840482e61f4a66d62af208b31529"
+    },
+    "opensafely-interpreter-required.csv": {
+      "id": "opensafely/interpreter-required/46c26a04",
+      "url": "https://www.opencodelists.org/codelist/opensafely/interpreter-required/46c26a04/",
+      "downloaded_at": "2026-09-24 11:53:19.095521+00:00Z",
+      "sha": "5c17d81096990234b1917cfafcb76f64feec69d5"
+    },
+    "opensafely-english-not-main-language.csv": {
+      "id": "opensafely/english-not-main-language/2db2f6cf",
+      "url": "https://www.opencodelists.org/codelist/opensafely/english-not-main-language/2db2f6cf/",
+      "downloaded_at": "2026-09-24 11:52:55.230058+00:00Z",
+      "sha": "5946d7896fc087ea9853a0877a787cf89a7246bf"
+    },
+    "opensafely-asylum-or-refugee-status.csv": {
+      "id": "opensafely/asylum-or-refugee-status/209cb9e0",
+      "url": "https://www.opencodelists.org/codelist/opensafely/asylum-or-refugee-status/209cb9e0/",
+      "downloaded_at": "2026-09-24 11:52:26.741181+00:00Z",
+      "sha": "ecd46bc32ff596afcb298dc249588fbe0efc907b"
+    },
+    "opensafely-immigration-status-excl-refugee-asylum.csv": {
+      "id": "opensafely/immigration-status-excl-refugee-asylum/6a18086d",
+      "url": "https://www.opencodelists.org/codelist/opensafely/immigration-status-excl-refugee-asylum/6a18086d/",
+      "downloaded_at": "2026-09-24 11:51:33.461562+00:00Z",
+      "sha": "74bb584b67e52636941b4a3578b0a1a5a58790b2"
+    },
+    "opensafely-born-outside-the-uk.csv": {
+      "id": "opensafely/born-outside-the-uk/51089538",
+      "url": "https://www.opencodelists.org/codelist/opensafely/born-outside-the-uk/51089538/",
+      "downloaded_at": "2026-09-24 11:51:09.108849+00:00Z",
+      "sha": "9029f3a1e72f92754b2e324b871a25801bde4e61"
+    },
+    "opensafely-born-in-the-uk.csv": {
+      "id": "opensafely/born-in-the-uk/6225f7e6",
+      "url": "https://www.opencodelists.org/codelist/opensafely/born-in-the-uk/6225f7e6/",
+      "downloaded_at": "2026-09-24 11:50:49.498474+00:00Z",
+      "sha": "e5150384c2d29110330fe723688c2e0aec6a947d"
+    },
+    "opensafely-migration-status.csv": {
+      "id": "opensafely/migration-status/459d112c",
+      "url": "https://www.opencodelists.org/codelist/opensafely/migration-status/459d112c/",
+      "downloaded_at": "2026-09-24 11:50:17.357416+00:00Z",
+      "sha": "c83a36473a68705f30c337867ea4a5c6f8f4066f"
+    },
+    "nhsd-primary-care-domain-refsets-dm_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/dm_cod/20260630",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/dm_cod/20260630/",
+      "downloaded_at": "2026-09-24 10:05:48.153329+00:00Z",
+      "sha": "9351d8be930d1f9b4af9dc3a79a3cac32b49dd04"
+    },
+    "nhsd-primary-care-domain-refsets-dmres_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/dmres_cod/20260630",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/dmres_cod/20260630/",
+      "downloaded_at": "2026-09-24 10:05:16.899554+00:00Z",
+      "sha": "57682a6345da78472609f01f1ca065ace27fcb43"
+    }
+  }
 }
