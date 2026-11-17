@@ -7,3 +7,15 @@ actions:
     outputs:
       moderately_sensitive:
         csv: output/tables/annual_counts/diabetes/*.csv 
+
+  af_prev:
+    run: ehrql:v1 generate-measures analysis/af_measures.py --output output/tables/annual_counts/atrial_fibrillation/:csv
+    outputs:
+      moderately_sensitive:
+        csv: output/tables/annual_counts/atrial_fibrillation/*.csv 
+
+  chd_prev:
+    run: ehrql:v1 generate-measures analysis/chd_measures.py --output output/tables/annual_counts/coronary_heart_disease/:csv
+    outputs:
+      moderately_sensitive:
+        csv: output/tables/annual_counts/coronary_heart_disease/*.csv 

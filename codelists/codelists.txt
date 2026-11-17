@@ -10,3 +10,8 @@ opensafely/interpreter-required/46c26a04/
 opensafely/british-ethnicities/6a897fb0/
 opensafely/trafficking-and-modern-slavery/0074bbad/
 opensafely/date-of-uk-entry/64964d8a/
+nhsd-primary-care-domain-refsets/afib_cod/20260630/
+nhsd-primary-care-domain-refsets/afibres_cod/20260630/
+nhsd-primary-care-domain-refsets/chd_cod/20260630/
+nhsd-primary-care-domain-refsets/hf_cod/20260630/
+nhsd-primary-care-domain-refsets/hfres_cod/20260630/

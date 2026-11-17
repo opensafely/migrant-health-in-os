@@ -13,6 +13,38 @@ diabetes_resolved_codelist = codelist_from_csv(
     category_column="term"
 )
 
+af_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-afib_cod.csv",
+    column="code",
+    category_column="term"
+)
+
+af_resolved_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-afibres_cod.csv",
+    column="code",
+    category_column="term"
+)
+
+chd_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-chd_cod.csv",
+    column="code",
+    category_column="term"
+)
+
+hf_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-hf_cod.csv",
+    column="code",
+    category_column="term"
+)
+
+hf_resolved_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-hfres_cod.csv",
+    column="code",
+    category_column="term"
+)
+
+# Migration codelists
+
 all_migrant_codes = codelist_from_csv(
     "codelists/opensafely-migration-status.csv", 
     column="code")

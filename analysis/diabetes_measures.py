@@ -1,8 +1,9 @@
-from ehrql import create_measures, INTERVAL, years, maximum_of, minimum_of, case, when, days
-from ehrql.tables.tpp import patients, practice_registrations, clinical_events, ons_deaths
+from ehrql import create_measures, INTERVAL, maximum_of, minimum_of, case, when
+from ehrql.tables.tpp import patients, practice_registrations, clinical_events
 import codelists 
 import analysis.def_migration_status_variables as def_migration_status_variables
 import analysis.def_subgroups as def_subgroups
+import analysis.def_annual_estimates as def_annual_estimates
 
 measures = create_measures()
 measures.configure_dummy_data(population_size=1000)
@@ -103,7 +104,7 @@ mig3_expr = def_migration_status_variables.build_mig_status_3_cat(migrant_status
 # run measures
 
 measures.define_defaults(
-    intervals=def_subgroups.annual_intervals,
+    intervals=def_annual_estimates.annual_intervals,
 )
 
 ## by 3-cat migrant status and age
