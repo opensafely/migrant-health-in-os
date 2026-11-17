@@ -1,3 +1,4 @@
+# A script to define the migration status variables used in the analysis
 
 from ehrql import case, when
 from ehrql.tables.tpp import clinical_events, patients
@@ -11,7 +12,6 @@ migrant_flags = {
     "refugee_asylum_status": codelists.asylum_refugee_migrant_codes,
     "english_not_main_language": codelists.english_not_main_language_excl_interpreter_migrant_codes,
     "interpreter_required": codelists.interpreter_migrant_codes,
-    "trafficking": codelists.trafficking_codes,
     "british_ethnicities": codelists.british_ethnicities_codes,
     "date_of_uk_entry": codelists.date_of_uk_entry
 }
