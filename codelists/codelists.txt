@@ -15,3 +15,7 @@ nhsd-primary-care-domain-refsets/afibres_cod/20260630/
 nhsd-primary-care-domain-refsets/chd_cod/20260630/
 nhsd-primary-care-domain-refsets/hf_cod/20260630/
 nhsd-primary-care-domain-refsets/hfres_cod/20260630/
+nhsd-primary-care-domain-refsets/hyp_cod/20260630/
+nhsd-primary-care-domain-refsets/hypres_cod/20260630/
+nhsd-primary-care-domain-refsets/strk_cod/20260630/
+nhsd-primary-care-domain-refsets/tia_cod/20260630/

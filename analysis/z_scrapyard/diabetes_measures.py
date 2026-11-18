@@ -3,7 +3,7 @@ from ehrql.tables.tpp import patients, practice_registrations, clinical_events
 import codelists 
 import analysis.def_migration_status_variables as def_migration_status_variables
 import analysis.def_subgroups as def_subgroups
-import analysis.def_annual_estimates as def_annual_estimates
+import analysis.z_scrapyard.def_annual_estimates as def_annual_estimates
 
 measures = create_measures()
 measures.configure_dummy_data(population_size=1000)

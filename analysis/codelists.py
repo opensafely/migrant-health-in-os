@@ -43,6 +43,30 @@ hf_resolved_codelist = codelist_from_csv(
     category_column="term"
 )
 
+hyp_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-hyp_cod.csv",
+    column="code",
+    category_column="term"
+)
+
+hyp_resolved_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-hypres_cod.csv",
+    column="code",
+    category_column="term"
+)
+
+stroke_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-stroke_cod.csv",
+    column="code",
+    category_column="term"
+)
+
+tia_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-tia_cod.csv",
+    column="code",
+    category_column="term"
+)
+
 # Migration codelists
 
 all_migrant_codes = codelist_from_csv(

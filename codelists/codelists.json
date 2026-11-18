@@ -1,5 +1,29 @@
 {
   "files": {
+    "nhsd-primary-care-domain-refsets-tia_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/tia_cod/20260630",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/tia_cod/20260630/",
+      "downloaded_at": "2026-11-18 12:06:07.642117+00:00Z",
+      "sha": "582c570c9e3f0229587e15ae38a343042efce060"
+    },
+    "nhsd-primary-care-domain-refsets-strk_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/strk_cod/20260630",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/strk_cod/20260630/",
+      "downloaded_at": "2026-11-18 12:05:54.184789+00:00Z",
+      "sha": "14a9a227bebbe509459f1bbedd9ceb903a50d4d7"
+    },
+    "nhsd-primary-care-domain-refsets-hypres_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/hypres_cod/20260630",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/hypres_cod/20260630/",
+      "downloaded_at": "2026-11-18 11:45:17.703121+00:00Z",
+      "sha": "8f94d85f3bb7977e96d742a6b0a48551e0f674a2"
+    },
+    "nhsd-primary-care-domain-refsets-hyp_cod.csv": {
+      "id": "nhsd-primary-care-domain-refsets/hyp_cod/20260630",
+      "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/hyp_cod/20260630/",
+      "downloaded_at": "2026-11-18 11:43:59.661390+00:00Z",
+      "sha": "f94870510a3550ff79710b2d88b551812bb2fb3b"
+    },
     "nhsd-primary-care-domain-refsets-hfres_cod.csv": {
       "id": "nhsd-primary-care-domain-refsets/hfres_cod/20260630",
       "url": "https://www.opencodelists.org/codelist/nhsd-primary-care-domain-refsets/hfres_cod/20260630/",
