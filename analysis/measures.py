@@ -4,7 +4,7 @@ import argparse
 from ehrql import create_measures, INTERVAL, years
 
 from analysis.qof_dictionary import DISEASES
-from analysis.def_disease_numerators import build_disease_numerator
+from analysis.def_disease_numerators import build_numerator
 from analysis.def_common_population import (
     build_common_population,
     apply_age_restriction,
@@ -30,10 +30,7 @@ migrant_status = migration.build_migrant_indicators(INTERVAL.end_date)
 mig3_expr = migration.build_mig_status_3_cat(migrant_status)
 
 
-numerator = build_disease_numerator(
-    codelist=config["codelist"],
-    resolved_codelist=config["resolved_codelist"],
-)
+numerator = build_numerator(config)
 
 eligible_group, registration_duration = apply_age_restriction(
     eligible_group,

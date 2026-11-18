@@ -23,3 +23,27 @@ actions:
     outputs:
       moderately_sensitive:
         csv: output/tables/annual_counts/atrial_fibrillation/*.csv
+  hf_prev:
+    run: ehrql:v1 generate-measures analysis/measures.py --output output/tables/annual_counts/heart_failure/:csv
+      -- --disease hf
+    outputs:
+      moderately_sensitive:
+        csv: output/tables/annual_counts/heart_failure/*.csv
+  hyp_prev:
+    run: ehrql:v1 generate-measures analysis/measures.py --output output/tables/annual_counts/hypertension/:csv
+      -- --disease hyp
+    outputs:
+      moderately_sensitive:
+        csv: output/tables/annual_counts/hypertension/*.csv
+  stroke_prev:
+    run: ehrql:v1 generate-measures analysis/measures.py --output output/tables/annual_counts/stroke/:csv
+      -- --disease stroke
+    outputs:
+      moderately_sensitive:
+        csv: output/tables/annual_counts/stroke/*.csv
+  ndh_prev:
+    run: ehrql:v1 generate-measures analysis/measures.py --output output/tables/annual_counts/non_diabetic_hyperglycaemia/:csv
+      -- --disease ndh
+    outputs:
+      moderately_sensitive:
+        csv: output/tables/annual_counts/non_diabetic_hyperglycaemia/*.csv

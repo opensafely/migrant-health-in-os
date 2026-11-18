@@ -56,15 +56,41 @@ hyp_resolved_codelist = codelist_from_csv(
 )
 
 stroke_codelist = codelist_from_csv(
-    "codelists/nhsd-primary-care-domain-refsets-stroke_cod.csv",
-    column="code",
-    category_column="term"
+    "codelists/nhsd-primary-care-domain-refsets-strk_cod.csv",
+    column="code"
 )
 
 tia_codelist = codelist_from_csv(
     "codelists/nhsd-primary-care-domain-refsets-tia_cod.csv",
-    column="code",
-    category_column="term"
+    column="code"
+)
+
+stroke_tia_codelist = stroke_codelist + tia_codelist
+
+ndh_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-ndh_cod.csv",
+    column="code"
+) 
+
+igt_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-igt_cod.csv",
+    column="code"
+)
+
+gestational_diabetes_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-gestdiab_cod.csv",
+    column="code"
+)   
+
+prediabetes_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-prd_cod.csv",
+    column="code"
+)
+
+ndh_combined_codelist = (
+    ndh_codelist
+    + prediabetes_codelist
+    + igt_codelist
 )
 
 # Migration codelists
