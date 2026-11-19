@@ -17,7 +17,7 @@ for disease_name, config in DISEASES.items():
         f"output/tables/annual_counts/{output_name}"
     )
 
-    actions[f"{disease_name}_prev"] = {
+    actions[f"{disease_name}_register"] = {
         "run": (
             "ehrql:v1 generate-measures "
             "analysis/measures.py "

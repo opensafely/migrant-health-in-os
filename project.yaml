@@ -5,45 +5,81 @@
 
 version: '5.0'
 actions:
-  chd_prev:
+  chd_register:
     run: ehrql:v1 generate-measures analysis/measures.py --output output/tables/annual_counts/coronary_heart_disease/:csv
       -- --disease chd
     outputs:
       moderately_sensitive:
         csv: output/tables/annual_counts/coronary_heart_disease/*.csv
-  diabetes_prev:
+  diabetes_register:
     run: ehrql:v1 generate-measures analysis/measures.py --output output/tables/annual_counts/diabetes/:csv
       -- --disease diabetes
     outputs:
       moderately_sensitive:
         csv: output/tables/annual_counts/diabetes/*.csv
-  af_prev:
+  af_register:
     run: ehrql:v1 generate-measures analysis/measures.py --output output/tables/annual_counts/atrial_fibrillation/:csv
       -- --disease af
     outputs:
       moderately_sensitive:
         csv: output/tables/annual_counts/atrial_fibrillation/*.csv
-  hf_prev:
+  hf_register:
     run: ehrql:v1 generate-measures analysis/measures.py --output output/tables/annual_counts/heart_failure/:csv
       -- --disease hf
     outputs:
       moderately_sensitive:
         csv: output/tables/annual_counts/heart_failure/*.csv
-  hyp_prev:
+  hyp_register:
     run: ehrql:v1 generate-measures analysis/measures.py --output output/tables/annual_counts/hypertension/:csv
       -- --disease hyp
     outputs:
       moderately_sensitive:
         csv: output/tables/annual_counts/hypertension/*.csv
-  stroke_prev:
+  stroke_register:
     run: ehrql:v1 generate-measures analysis/measures.py --output output/tables/annual_counts/stroke/:csv
       -- --disease stroke
     outputs:
       moderately_sensitive:
         csv: output/tables/annual_counts/stroke/*.csv
-  ndh_prev:
+  ndh_register:
     run: ehrql:v1 generate-measures analysis/measures.py --output output/tables/annual_counts/non_diabetic_hyperglycaemia/:csv
       -- --disease ndh
     outputs:
       moderately_sensitive:
         csv: output/tables/annual_counts/non_diabetic_hyperglycaemia/*.csv
+  dementia_register:
+    run: ehrql:v1 generate-measures analysis/measures.py --output output/tables/annual_counts/dementia/:csv
+      -- --disease dementia
+    outputs:
+      moderately_sensitive:
+        csv: output/tables/annual_counts/dementia/*.csv
+  cancer_register:
+    run: ehrql:v1 generate-measures analysis/measures.py --output output/tables/annual_counts/cancer/:csv
+      -- --disease cancer
+    outputs:
+      moderately_sensitive:
+        csv: output/tables/annual_counts/cancer/*.csv
+  ckd_register:
+    run: ehrql:v1 generate-measures analysis/measures.py --output output/tables/annual_counts/chronic_kidney_disease/:csv
+      -- --disease ckd
+    outputs:
+      moderately_sensitive:
+        csv: output/tables/annual_counts/chronic_kidney_disease/*.csv
+  depression_register:
+    run: ehrql:v1 generate-measures analysis/measures.py --output output/tables/annual_counts/depression/:csv
+      -- --disease depression
+    outputs:
+      moderately_sensitive:
+        csv: output/tables/annual_counts/depression/*.csv
+  ld_register:
+    run: ehrql:v1 generate-measures analysis/measures.py --output output/tables/annual_counts/learning_disability/:csv
+      -- --disease ld
+    outputs:
+      moderately_sensitive:
+        csv: output/tables/annual_counts/learning_disability/*.csv
+  ra_register:
+    run: ehrql:v1 generate-measures analysis/measures.py --output output/tables/annual_counts/rheumatoid_arthritis/:csv
+      -- --disease ra
+    outputs:
+      moderately_sensitive:
+        csv: output/tables/annual_counts/rheumatoid_arthritis/*.csv

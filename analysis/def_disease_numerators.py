@@ -14,37 +14,64 @@ def resolve_codelists(name):
     return getattr(codelists, name)
 
 
-def build_disease_numerator(codelist, resolved_codelist=None):
+
+
+def build_disease_numerator(
+    codelist,
+    resolved_codelist=None,
+    diagnosis_start_date=None,
+    exclusion_includes_same_day=False,
+    min_age=None, # note: I have included min_age here (even though it is also in the measures.py denominator) to allow for this function to be re-usable for QOF calculations in projects that are not using the measures framework.
+):
 
     codelist = resolve_codelists(codelist)
     resolved_codelist = resolve_codelists(resolved_codelist)
 
     events = clinical_events.where(
-        clinical_events.date.is_on_or_before(INTERVAL.end_date)
+        clinical_events.date <= INTERVAL.end_date
     )
 
     diagnosis = events.where(
         events.snomedct_code.is_in(codelist)
     )
 
-    if resolved_codelist is None:
-        return diagnosis.exists_for_patient()
-
-    resolved = events.where(
-        events.snomedct_code.is_in(resolved_codelist)
-    )
-
-    latest_diagnosis = diagnosis.date.maximum_for_patient()
-    latest_resolved = resolved.date.maximum_for_patient()
-
-    return (
-        (latest_resolved < latest_diagnosis)
-        |
-        (
-            latest_diagnosis.is_not_null()
-            & latest_resolved.is_null()
+    if diagnosis_start_date is not None:
+        diagnosis = diagnosis.where(
+            diagnosis.date >= diagnosis_start_date
         )
-    )
+
+    if resolved_codelist is None:
+        numerator = diagnosis.exists_for_patient()
+
+    else:
+        resolved = events.where(
+            events.snomedct_code.is_in(resolved_codelist)
+        )
+
+        latest_diagnosis = diagnosis.date.maximum_for_patient()
+
+        if exclusion_includes_same_day:
+            exclusion_after_diagnosis = resolved.where(
+                resolved.date >= latest_diagnosis
+            )
+        else:
+            exclusion_after_diagnosis = resolved.where(
+                resolved.date > latest_diagnosis
+            )
+
+        numerator = (
+            latest_diagnosis.is_not_null()
+            & ~exclusion_after_diagnosis.exists_for_patient()
+        )
+
+    if min_age is not None:
+        numerator = (
+            numerator
+            & (patients.age_on(INTERVAL.end_date) >= min_age)
+        )
+
+    return numerator
+
 
 def build_ndh_numerator(config):
 
@@ -185,12 +212,76 @@ def build_ndh_numerator(config):
     )
 
 
+
+def build_ckd_numerator(config):
+
+    events = clinical_events.where(
+        clinical_events.date <= INTERVAL.end_date
+    )
+
+    ckd_stage_3_to_5_codes = resolve_codelists(config["codelist"])
+    ckd_stage_1_to_2_codes = resolve_codelists(config["ckd_1_2_codelist"])
+    ckd_resolved_codes = resolve_codelists(config["resolved_codelist"])
+
+    ckd_3_5 = events.where(
+        events.snomedct_code.is_in(ckd_stage_3_to_5_codes)
+    )
+
+    ckd_1_2 = events.where(
+        events.snomedct_code.is_in(ckd_stage_1_to_2_codes)
+    )
+
+    ckd_resolved = events.where(
+        events.snomedct_code.is_in(ckd_resolved_codes)
+    )
+
+    latest_ckd_3_5 = (
+        ckd_3_5.date.maximum_for_patient()
+    )
+
+    ckd_1_2_after_ckd_3_5 = ckd_1_2.where(
+        ckd_1_2.date > latest_ckd_3_5
+    )
+
+    latest_ckd_1_2_after_ckd_3_5 = (
+        ckd_1_2_after_ckd_3_5.date.maximum_for_patient()
+    )
+
+    ckd_resolved_after_ckd_3_5 = ckd_resolved.where(
+        ckd_resolved.date > latest_ckd_3_5
+    )
+
+    latest_ckd_resolved_after_ckd_3_5 = (
+        ckd_resolved_after_ckd_3_5.date.maximum_for_patient()
+    )
+
+    rule_1 = (
+        patients.age_on(INTERVAL.end_date) >= 18
+    )
+
+    rule_2 = (
+        latest_ckd_3_5.is_not_null()
+        & latest_ckd_1_2_after_ckd_3_5.is_null()
+        & latest_ckd_resolved_after_ckd_3_5.is_null()
+    )
+
+    return rule_1 & rule_2
+
+
 def build_numerator(config):
 
     if config.get("numerator_type") == "custom_ndh":
         return build_ndh_numerator(config)
 
+    if config.get("numerator_type") == "custom_ckd":
+        return build_ckd_numerator(config)
+
     return build_disease_numerator(
-        codelist=config["codelist"],
-        resolved_codelist=config["resolved_codelist"],
+    codelist=config["codelist"],
+    resolved_codelist=config["resolved_codelist"],
+    diagnosis_start_date=config.get("diagnosis_start_date"),
+    exclusion_includes_same_day=config.get(
+        "exclusion_includes_same_day", False
+    ),
+    min_age=config.get("min_age")
     )

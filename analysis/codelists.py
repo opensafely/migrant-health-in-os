@@ -93,6 +93,71 @@ ndh_combined_codelist = (
     + igt_codelist
 )
 
+asthma_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-ast_cod.csv",
+    column="code"
+)
+
+dementia_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-dem_cod.csv",
+    column="code"
+)
+
+cancer_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-can_cod.csv",
+    column="code"
+)   
+
+ckd_stage_3_to_5_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-ckd_cod.csv",
+    column="code"
+)
+
+ckd_stage_1_to_2_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-ckd1and2_cod.csv",
+    column="code"
+)
+
+ckd_resolved_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-ckdres_cod.csv",
+    column="code"
+)   
+
+depression_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-depr_cod.csv",
+    column="code"
+)
+
+depression_resolved_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-depres_cod.csv",
+    column="code"
+)
+
+epilepsy_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-epil_cod.csv",
+    column="code"
+)   
+
+epilepsy_resolved_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-epilres_cod.csv",
+    column="code"
+)   
+
+learning_disability_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-ld_cod.csv",
+    column="code"
+)
+
+learning_disability_exclusion_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-ldrem_cod.csv",
+    column="code"
+)
+
+rheumatoid_arthritis_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-rarth_cod.csv",
+    column="code"
+)
+
 # Migration codelists
 
 all_migrant_codes = codelist_from_csv(

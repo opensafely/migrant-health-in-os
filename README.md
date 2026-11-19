@@ -1,5 +1,9 @@
 # migrant-health-in-os
 
+This repository contains code that derives patient registers for all conditions included in QOF. It is based on the Business Rules for Quality and Outcomes Framework (QOF) 2026 (v51), which is available here: https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-collections/primary-care-business-rules/business-rules/quality-and-outcomes-framework-qof-business-rules-v51-2026/ (accessed 19/11/2026). 
+
+Denominators for disease registers that have age thresholds are also age-specific, as per the QOF technical annex: https://digital.nhs.uk/data-and-information/publications/statistical/quality-and-outcomes-framework-achievement-prevalence-and-exceptions-data/2025-26/technical-annex (accessed 19/11/2026)
+
 [View on OpenSAFELY](https://jobs.opensafely.org/repo/https%253A%252F%252Fgithub.com%252Fopensafely%252Fmigrant-health-in-os)
 
 Details of the purpose and any published outputs from this project can be found at the link above.

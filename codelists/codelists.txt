@@ -23,3 +23,16 @@ nhsd-primary-care-domain-refsets/ndh_cod/20260630/
 nhsd-primary-care-domain-refsets/igt_cod/20260630/
 nhsd-primary-care-domain-refsets/gestdiab_cod/20260630/
 nhsd-primary-care-domain-refsets/prd_cod/20260630/
+nhsd-primary-care-domain-refsets/ast_cod/20260630/
+nhsd-primary-care-domain-refsets/dem_cod/20260630/
+nhsd-primary-care-domain-refsets/can_cod/20260630/
+nhsd-primary-care-domain-refsets/ckd_cod/20260630/
+nhsd-primary-care-domain-refsets/ckd1and2_cod/20260630/
+nhsd-primary-care-domain-refsets/ckdres_cod/20260630/
+nhsd-primary-care-domain-refsets/depr_cod/20260630/
+nhsd-primary-care-domain-refsets/depres_cod/20260630/
+nhsd-primary-care-domain-refsets/epil_cod/20260630/
+nhsd-primary-care-domain-refsets/epilres_cod/20260630/
+nhsd-primary-care-domain-refsets/ld_cod/20260630/
+nhsd-primary-care-domain-refsets/ldrem_cod/20260630/
+nhsd-primary-care-domain-refsets/rarth_cod/20260630/
