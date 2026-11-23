@@ -268,6 +268,83 @@ def build_ckd_numerator(config):
     return rule_1 & rule_2
 
 
+def build_osteoporosis_reg1_numerator(config):
+
+    events = clinical_events.where(
+        clinical_events.date <= INTERVAL.end_date
+    )
+
+    osteoporosis_codes = resolve_codelists(config["codelist"])
+    dxa_scan_codes = resolve_codelists(config["dxa_codelist"])
+    dxa2_scan_codes = resolve_codelists(config["dxa2_codelist"])
+    fragility_fracture_codes = resolve_codelists(
+        config["fragility_fracture_codelist"]
+    )
+
+    osteoporosis = events.where(
+        events.snomedct_code.is_in(osteoporosis_codes)
+    )
+
+    dxa_scan = events.where(
+        events.snomedct_code.is_in(dxa_scan_codes)
+    )
+
+    dxa2_scan = events.where(
+        events.snomedct_code.is_in(dxa2_scan_codes)
+    )
+
+    fragility_fracture = events.where(
+        events.snomedct_code.is_in(fragility_fracture_codes)
+    )
+
+    fragility_fracture_since_2012 = fragility_fracture.where(
+        fragility_fracture.date >= "2012-04-01"
+    )
+
+    dxa2_osteoporotic = dxa2_scan.where(
+        dxa2_scan.numeric_value <= -2.5
+    )
+
+    rule_1 = (
+        (patients.age_on(INTERVAL.end_date) >= config["min_age"])
+        & (patients.age_on(INTERVAL.end_date) <= config["max_age"])
+    )
+
+    rule_2 = (
+        fragility_fracture_since_2012.exists_for_patient()
+        & osteoporosis.exists_for_patient()
+        & (
+            dxa_scan.exists_for_patient()
+            | dxa2_osteoporotic.exists_for_patient()
+        )
+    )
+
+    return rule_1 & rule_2
+
+def build_osteoporosis_reg2_numerator(config):
+
+    osteoporosis = build_disease_numerator(
+        codelist=config["codelist"],
+        min_age=config["min_age"],
+    )
+
+    fragility_fracture_codes = resolve_codelists(
+        config["fragility_fracture_codelist"]
+    )
+
+    fragility_fracture = clinical_events.where(
+        clinical_events.snomedct_code.is_in(
+            fragility_fracture_codes
+        )
+        & (clinical_events.date >= "2014-04-01")
+        & (clinical_events.date <= INTERVAL.end_date)
+    )
+
+    return (
+        osteoporosis
+        & fragility_fracture.exists_for_patient()
+    )
+
 def build_numerator(config):
 
     if config.get("numerator_type") == "custom_ndh":
@@ -275,6 +352,12 @@ def build_numerator(config):
 
     if config.get("numerator_type") == "custom_ckd":
         return build_ckd_numerator(config)
+
+    if config.get("numerator_type") == "custom_osteoporosis_reg1":
+        return build_osteoporosis_reg1_numerator(config)
+
+    if config.get("numerator_type") == "custom_osteoporosis_reg2":
+        return build_osteoporosis_reg2_numerator(config)
 
     return build_disease_numerator(
     codelist=config["codelist"],

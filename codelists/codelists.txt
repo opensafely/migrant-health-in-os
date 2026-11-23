@@ -36,3 +36,8 @@ nhsd-primary-care-domain-refsets/epilres_cod/20260630/
 nhsd-primary-care-domain-refsets/ld_cod/20260630/
 nhsd-primary-care-domain-refsets/ldrem_cod/20260630/
 nhsd-primary-care-domain-refsets/rarth_cod/20260630/
+nhsd-primary-care-domain-refsets/dxa_cod/20260630/
+nhsd-primary-care-domain-refsets/ff_cod/20260630/
+nhsd-primary-care-domain-refsets/osteo_cod/20260630/
+nhsd-primary-care-domain-refsets/dxa2_cod/20260630/
+nhsd-primary-care-domain-refsets/mh_cod/20260630/

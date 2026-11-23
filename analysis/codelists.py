@@ -158,6 +158,31 @@ rheumatoid_arthritis_codelist = codelist_from_csv(
     column="code"
 )
 
+dxa_scan_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-dxa_cod.csv",
+    column="code"
+)
+
+dxa2_scan_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-dxa2_cod.csv",
+    column="code"
+)
+
+fragility_fracture_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-fragfr_cod.csv",
+    column="code"
+)
+
+osteoporosis_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-osteo_cod.csv",
+    column="code"
+)
+
+mental_health_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-mh_cod.csv",
+    column="code"
+)       
+
 # Migration codelists
 
 all_migrant_codes = codelist_from_csv(

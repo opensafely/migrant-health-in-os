@@ -87,4 +87,28 @@ DISEASES = {
         "min_age": 16,
         "output_name": "rheumatoid_arthritis",
     },
+    "op_reg1": {
+        "numerator_type": "custom_osteoporosis_reg1",
+        "codelist": "osteoporosis_codelist",
+        "dxa_codelist": "dxa_scan_codelist",
+        "dxa2_codelist": "dxa2_scan_codelist",
+        "fragility_fracture_codelist": "fragility_fracture_codelist",
+        "resolved_codelist": None,
+        "min_age": 50,
+        "output_name": "osteoporosis_register1",
+    },
+    "op_reg2": {
+        "numerator_type": "custom_osteoporosis_reg2",
+        "codelist": "osteoporosis_codelist",
+        "fragility_fracture_codelist": "fragility_fracture_codelist",
+        "resolved_codelist": None,
+        "min_age": 75,
+        "output_name": "osteoporosis_register2",
+    },
+    "mental_health_reg1": {
+            "codelist": "mental_health_codelist",
+            "resolved_codelist": None,
+            "min_age": None,
+            "output_name": "pyschosis_schizophrenia_bipolar_affective_disorder",
+        },
 }

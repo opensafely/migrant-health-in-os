@@ -97,16 +97,22 @@ def build_common_population():
 def apply_age_restriction(
     eligible_group,
     registration_duration,
-    min_age,
+    min_age=None,
+    max_age=None,
 ):
 
-    if min_age is None:
+    if min_age is None and max_age is None:
         return eligible_group, registration_duration
 
-    age_eligible = (
-        patients.age_on(INTERVAL.end_date)
-        >= min_age
-    )
+    age = patients.age_on(INTERVAL.end_date)
+
+    if min_age is not None:
+        age_eligible = age >= min_age
+    else:
+        age_eligible = age <= max_age
+
+    if max_age is not None:
+        age_eligible = age_eligible & (age <= max_age)
 
     eligible_group = eligible_group & age_eligible
 

@@ -83,3 +83,21 @@ actions:
     outputs:
       moderately_sensitive:
         csv: output/tables/annual_counts/rheumatoid_arthritis/*.csv
+  op_reg1_register:
+    run: ehrql:v1 generate-measures analysis/measures.py --output output/tables/annual_counts/osteoporosis_register1/:csv
+      -- --disease op_reg1
+    outputs:
+      moderately_sensitive:
+        csv: output/tables/annual_counts/osteoporosis_register1/*.csv
+  op_reg2_register:
+    run: ehrql:v1 generate-measures analysis/measures.py --output output/tables/annual_counts/osteoporosis_register2/:csv
+      -- --disease op_reg2
+    outputs:
+      moderately_sensitive:
+        csv: output/tables/annual_counts/osteoporosis_register2/*.csv
+  mental_health_reg1_register:
+    run: ehrql:v1 generate-measures analysis/measures.py --output output/tables/annual_counts/pyschosis_schizophrenia_bipolar_affective_disorder/:csv
+      -- --disease mental_health_reg1
+    outputs:
+      moderately_sensitive:
+        csv: output/tables/annual_counts/pyschosis_schizophrenia_bipolar_affective_disorder/*.csv
